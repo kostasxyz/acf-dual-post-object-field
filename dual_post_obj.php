@@ -336,16 +336,12 @@ class dual_Post_object extends acf_Field
 	
 	function update_value($post_id, $field, $value)
 	{
-	   
-		//$new_meta = array('dsfrsdf' => 'dsfafasf' );
-		
-		//$oValues = array();
 		
 		$oValues = maybe_unserialize(get_post_meta($value, 'reverse_obj', true)); 
 		
 		if (empty($oValues) || $oValues == '')
 		{
-			echo 'yes';
+			//echo 'yes';
 			update_post_meta($value, 'reverse_obj', maybe_serialize(array($post_id)));
 		}
 		
@@ -363,11 +359,11 @@ class dual_Post_object extends acf_Field
 		parent::update_value($post_id, $field, $value);
 		
 		// debug
-		$nValues = maybe_unserialize(get_post_meta($value, 'reverse_obj', true));
+		//$nValues = maybe_unserialize(get_post_meta($value, 'reverse_obj', true));
 		
-		echo '<pre>';
-		print_r ($nValues);
-		echo '</pre>';
+		//echo '<pre>';
+		//print_r ($nValues);
+		//echo '</pre>';
 	}
     
     
